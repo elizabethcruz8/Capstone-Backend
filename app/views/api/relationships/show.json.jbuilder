@@ -1,0 +1,1 @@
+json.partial! "relationship.json.jbuilder", relationship: @relationship
