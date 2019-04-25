@@ -1,11 +1,12 @@
 class Api::PostsController < ApplicationController
+ 
   def create 
     @post = Post.new(
       title: params[:title],
       text: params[:text], 
       photo: params[:photo],
       video: params[:video],
-      user_id: params[:user_id]
+      user_id: current_user.id
       )
     @post.save 
     render "show.json.jbuilder"

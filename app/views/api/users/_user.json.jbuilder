@@ -10,6 +10,7 @@ json.followers user.followers.each do |follower|
   json.id follower.id
   json.first_name follower.first_name
   json.last_name follower.last_name
+  json.posts follower.posts
 end
 
 json.hobbies user.hobbies.each do |hobby|
