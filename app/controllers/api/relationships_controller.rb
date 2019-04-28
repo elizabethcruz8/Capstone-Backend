@@ -11,12 +11,10 @@ class Api::RelationshipsController < ApplicationController
   end 
 
   def create 
-    @relationship = Relationship.new(
-      follower_id: params[:follower_id], 
+    @relationship = Relationship.find_or_create_by(
+      follower_id: current_user.id, 
       leader_id: params[:leader_id],
       )
-
-    @relationship.save 
     render "show.json.jbuilder"
   end 
 

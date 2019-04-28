@@ -14,6 +14,7 @@ json.followers user.followers.each do |follower|
 end
 
 json.hobbies user.hobbies.each do |hobby|
+  json.id hobby.id 
   json.name hobby.name 
 end 
 
@@ -36,12 +37,18 @@ json.posts user.posts.each do |post|
   json.photo  post.photo
   json.video  post.video
   json.user_first_name post.user.first_name
-  json.user_last_name post.user.last_name
+
   json.comments post.comments.each do |comment|
     json.id comment.id
     json.text comment.text
     json.user_first_name comment.user.first_name
+    json.user_last_name comment.user.last_name
   end
+
+  json.user_last_name post.user.last_name
+    json.followers user.followers.each do |follower|
+      json.commments follower.comments
+    end 
 end 
 
 json.comments user.comments.each do |comment|
