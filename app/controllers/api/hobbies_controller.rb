@@ -1,4 +1,9 @@
 class Api::HobbiesController < ApplicationController
+  def index
+    @hobbies = Hobby.all
+    render "index.json.jbuilder"
+  end
+
   def create 
     @hobby = Hobby.new(
       name: params[:name],

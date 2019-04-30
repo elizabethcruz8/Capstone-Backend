@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get "/relationships/:id" => "relationships#show"
     delete "/relationships/:id" => "relationships#destroy"
 
+    get "/hobbies" => "hobbies#index"
     post "/hobbies" => "hobbies#create"
     get "/hobbies/:id" => "hobbies#show"
     delete "/hobbies/:id" => "hobbies#destroy"
