@@ -1,6 +1,9 @@
 class Api::HobbiesController < ApplicationController
   def index
     @hobbies = Hobby.all
+    if params[:new]
+      @hobbies = @hobbies.select { |hobby| !current_user.hobbies.include? hobby }
+    end
     render "index.json.jbuilder"
   end
 

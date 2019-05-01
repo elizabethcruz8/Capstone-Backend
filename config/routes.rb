@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     delete "/hobbies/:id" => "hobbies#destroy"
 
     get "/hobbyusers" => "hobbyusers#index"
+    post "/hobbyusers" => "hobbyusers#create"
+    
 
     post "/posts" => "posts#create"
     delete "/posts/:id" => "posts#destroy"

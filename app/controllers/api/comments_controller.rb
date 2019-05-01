@@ -3,10 +3,13 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(
       text: params[:text], 
       post_id: params[:post_id],
-      user_id: params[:user_id] #current.user_id
+      user_id: current_user.id
       )
-    @comment.save 
-    render "show.json.jbuilder"
+    if @comment.save 
+      render "show.json.jbuilder"
+    else
+      render json: {errors: @comment.errors.full_messages}, status: 422
+    end
   end
 
   def destroy 
