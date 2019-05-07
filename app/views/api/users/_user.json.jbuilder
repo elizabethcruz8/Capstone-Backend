@@ -5,9 +5,11 @@ json.email user.email
 json.date_of_birth user.date_of_birth
 json.state user.state
 json.city user.city 
+json.image user.image
 
 json.followers user.followers.each do |follower|
   json.id follower.id
+  json.image follower.image
   json.first_name follower.first_name
   json.last_name follower.last_name
   json.posts follower.posts

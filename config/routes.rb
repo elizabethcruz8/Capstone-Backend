@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do 
-    post "/users" => "users#create"
     get "/users/current_user" => "users#show_current_user"
+    post "/users" => "users#create"
     get "/users/:id" => "users#show"
+    patch "/users/:id" => "users#update"
     
     post "/sessions" => "sessions#create"
 
@@ -25,6 +26,9 @@ Rails.application.routes.draw do
 
     post "/comments" => "comments#create"
     delete "/comments/:id" => "comments#destroy"
+
+    get "/messages" => "messages#index"
+    post "/messages" => "messages#create"
 
   end
 end

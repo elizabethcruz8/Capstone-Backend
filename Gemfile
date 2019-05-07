@@ -50,3 +50,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'http'
 gem 'rack-cors'
+
+gem 'figaro'
+
+gem 'cloudinary'

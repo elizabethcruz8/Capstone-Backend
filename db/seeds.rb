@@ -38,3 +38,5 @@ Comment.create!(text: "Hey, I've played that map as well. ", post_id:1, user_id:
 Comment.create!(text: "Lol!", post_id:1, user_id: 2)
 Comment.create!(text: "Cool post!", post_id:2, user_id: 5)
 
+Message.create!(body: "hello there", user_id:1, author_id: 2)
+
