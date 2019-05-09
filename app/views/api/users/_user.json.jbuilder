@@ -6,19 +6,17 @@ json.date_of_birth user.date_of_birth
 json.state user.state
 json.city user.city 
 json.image user.image
+json.Gamer_Tag user.Gamer_Tag
 
 json.followers user.followers.each do |follower|
   json.id follower.id
   json.image follower.image
   json.first_name follower.first_name
   json.last_name follower.last_name
+  json.Gamer_Tag follower.Gamer_Tag
   json.posts follower.posts
 end
 
-# json.hobbies user.hobbies.each do |hobby|
-#   json.id hobby.id 
-#   json.name hobby.name 
-# end 
 json.hobbies user.hobby_users.each do |hobbyuser|
   json.id hobbyuser.hobby.id 
   json.name hobbyuser.hobby.name 
@@ -30,6 +28,7 @@ json.hobby_users user.hobby_users.each do |hobbyuser|
     if @user.id != user.id
       json.id user.id
       json.first_name user.first_name
+      json.Gamer_Tag user.Gamer_Tag
       json.hobby user.hobbies.each do |hobby|
         json.name hobby.name 
       end 

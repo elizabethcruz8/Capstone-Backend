@@ -12,7 +12,8 @@ class Api::UsersController < ApplicationController
       date_of_birth: params[:date_of_birth],
       state: params[:state],
       city: params[:city],
-      image: cloudinary_url
+      image: cloudinary_url,
+      Gamer_Tag: params[:Gamer_Tag]
       )
 
     if @user.save
