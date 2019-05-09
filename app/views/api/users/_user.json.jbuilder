@@ -15,9 +15,14 @@ json.followers user.followers.each do |follower|
   json.posts follower.posts
 end
 
-json.hobbies user.hobbies.each do |hobby|
-  json.id hobby.id 
-  json.name hobby.name 
+# json.hobbies user.hobbies.each do |hobby|
+#   json.id hobby.id 
+#   json.name hobby.name 
+# end 
+json.hobbies user.hobby_users.each do |hobbyuser|
+  json.id hobbyuser.hobby.id 
+  json.name hobbyuser.hobby.name 
+  json.hobbyuser_id hobbyuser.id 
 end 
 
 json.hobby_users user.hobby_users.each do |hobbyuser|
@@ -32,7 +37,7 @@ json.hobby_users user.hobby_users.each do |hobbyuser|
   end
 end 
 
-json.posts user.posts.each do |post|
+json.posts user.posts.order(id: :desc).each do |post|
   json.id post.id
   json.title post.title 
   json.text post.text

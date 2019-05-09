@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
     get "/hobbyusers" => "hobbyusers#index"
     post "/hobbyusers" => "hobbyusers#create"
+    delete "/hobbyusers/:id" => "hobbyusers#destroy"
     
 
     post "/posts" => "posts#create"

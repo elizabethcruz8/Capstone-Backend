@@ -16,4 +16,11 @@ class Api::HobbyusersController < ApplicationController
       render json: {errors: @hobbyuser.errors.full_messages}, status: 422
     end
   end
+
+
+  def destroy
+    @hobbyuser = HobbyUser.find_by(id: params[:id])
+    @hobbyuser.destroy
+    render json: {message:"Hobby succesfully deleted!"}
+  end 
 end
